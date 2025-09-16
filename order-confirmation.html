@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Order Confirmation</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #d4edda; /* light green background */
+      color: #155724;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .emoji {
+      font-size: 6rem;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 1.5rem;
+    }
+
+    .btn {
+      margin-top: 30px;
+      padding: 10px 20px;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      font-size: 1.2rem;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background-color: #218838;
+    }
+  </style>
+</head>
+<body>
+  <div class="emoji">🛵</div>
+  <h1>Thank You for Ordering!</h1>
+  <p id="order-item">Your food is on its way 🚀</p>
+  <button class="btn" onclick="goBack()">Back to Menu</button>
+
+  <script>
+    function goBack() {
+      window.location.href = 'index.html'; // Change to your main menu file name if different
+    }
+
+    // Get the item name from query parameter
+    const params = new URLSearchParams(window.location.search);
+    const item = params.get('item');
+    if (item) {
+      document.getElementById('order-item').textContent = `You ordered: ${item} 🚚`;
+    }
+  </script>
+</body>
+</html>

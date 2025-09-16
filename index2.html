@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Byte & Bite – Menu</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #fad6d6;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #d62828;
+      font-size: 3rem;
+      margin-bottom: 30px;
+    }
+
+    .menu-tabs {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-bottom: 30px;
+    }
+
+    .menu-tabs button {
+      padding: 14px 26px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      background-color: #d62828;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .menu-tabs button:hover {
+      background-color: #a31d1d;
+    }
+
+    .menu-section {
+      display: none;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .menu-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    .menu-row {
+      display: grid;
+      gap: 20px;
+    }
+
+    .large-row {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .medium-row {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .small-row {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .menu-item {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .menu-item img {
+      display: block;
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+    }
+
+    .menu-item h3 {
+      color: #d62828;
+      margin: 10px 0 5px;
+      font-size: 1.2rem;
+    }
+
+    .menu-item p {
+      margin: 0;
+      font-size: 1.1rem;
+      color: #333;
+    }
+
+    .menu-item button {
+      margin: 10px 0 15px;
+      padding: 10px 20px;
+      background-color: #28a745;
+      border: none;
+      color: white;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 1rem;
+    }
+
+    .menu-item button:hover {
+      background-color: #218838;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Our Menu</h1>
+
+  <div class="menu-tabs">
+    <button onclick="showMenu('breakfast')">Breakfast</button>
+    <button onclick="showMenu('lunch')">Lunch</button>
+    <button onclick="showMenu('snacks')">Snacks</button>
+    <button onclick="showMenu('dinner')">Dinner</button>
+  </div>
+
+  <!-- Breakfast Section -->
+  <div id="breakfast" class="menu-section">
+    <div class="menu-grid">
+      <!-- Large Row -->
+      <div class="menu-row large-row">
+        <div class="menu-item">
+          <img src="images/OIP.webp" alt="Idli & Sambar">
+          <h3>Idli & Sambar</h3>
+          <p>₹40</p>
+          <button onclick="placeOrder('Idli & Sambar')">Order</button>
+        </div>
+        <div class="menu-item">
+          <img src="images/dosa.webp" alt="Dosa">
+          <h3>Dosa</h3>
+          <p>₹50</p>
+          <button onclick="placeOrder('Dosa')">Order</button>
+        </div>
+      </div>
+
+      <!-- Medium Row -->
+      <div class="menu-row medium-row">
+        <div class="menu-item">
+          <img src="images/upma.jpg" alt="Upma">
+          <h3>Upma</h3>
+          <p>₹35</p>
+          <button onclick="placeOrder('Upma')">Order</button>
+        </div>
+        <div class="menu-item">
+          <img src="images/poha.jpg" alt="Poha">
+          <h3>Poha</h3>
+          <p>₹30</p>
+          <button onclick="placeOrder('Poha')">Order</button>
+        </div>
+        <div class="menu-item">
+          <img src="images/omeletee.webp" alt="Omelette">
+          <h3>Omelette</h3>
+          <p>₹25</p>
+          <button onclick="placeOrder('Omelette')">Order</button>
+        </div>
+      </div>
+
+      <!-- Small Row -->
+      <div class="menu-row small-row">
+        <div class="menu-item">
+          <img src="images/vada.webp" alt="Vada">
+          <h3>Vada</h3>
+          <p>₹20</p>
+          <button onclick="placeOrder('Vada')">Order</button>
+        </div>
+        <div class="menu-item">
+          <img src="images/pongal1.jpg"Pongal">
+          <h3>Pongal</h3>
+          <p>₹45</p>
+          <button onclick="placeOrder('Pongal')">Order</button>
+        </div>
+        <div class="menu-item">
+          <img src="images/chapathi.webp" alt="Chapati">
+          <h3>Chapati</h3>
+          <p>₹30</p>
+          <button onclick="placeOrder('Chapati')">Order</button>
+        </div>
+        <div class="menu-item">
+          <img src="images/paratha.jpg"alt="Paratha">
+          <h3>Paratha</h3>
+          <p>₹35</p>
+          <button onclick="placeOrder('Paratha')">Order</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Lunch Section -->
+  <div id="lunch" class="menu-section">
+    <div class="menu-grid">
+      <div class="menu-row large-row">
+        <div class="menu-item">
+          <img src="images/vegthail.png" alt="Thali">
+          <h3>Veg Thali</h3>
+          <p>₹120</p>
+          <button onclick="placeOrder('Veg Thali')">Order</button>
+        </div>
+        <div class="menu-item">
+          <img src="images/chickenbiryani.jpg" alt="Chicken Biryani">
+          <h3>Chicken Biryani</h3>
+          <p>₹150</p>
+          <button onclick="placeOrder('Chicken Biryani')">Order</button>
+        </div>
+      </div>
+
+      <div class="menu-row medium-row">
+        <div class="menu-item">
+          <img src="images/PaneerButterMasala.webp" alt="Paneer Butter Masala">
+          <h3>Paneer Butter Masala</h3>
+          <p>₹110</p>
+          <button onclick="placeOrder('Paneer Butter Masala')">Order</button>
+        </div>
+        <div class="menu-item">
+          <img src="images/daltadka.png" alt="Dal Tadka">
+          <h3>Dal Tadka</h3>
+          <p>₹90</p>
+          <button onclick="placeOrder('Dal Tadka')">Order</button>
+        </div>
+        <div class="menu-item">
+          <img src="images/butterchicken.jpg"alt="Butter Chicken">
+          <h3>Butter Chicken</h3>
+          <p>₹160</p>
+          <button onclick="placeOrder('Butter Chicken')">Order</button>
+        </div>
+      </div>
+
+      <div class="menu-row small-row">
+        <div class="menu-item">
+          <img src="images/eggcurry.jpg" alt="Egg Curry">
+          <h3>Egg Curry</h3>
+          <p>₹70</p>
+          <button onclick="placeOrder('Egg Curry')">Order</button>
+        </div>
+        <div class="menu-item">
+          <img src="images/jeerarice.webp" alt="Jeera Rice">
+          <h3>Jeera Rice</h3>
+          <p>₹60</p>
+          <button onclick="placeOrder('Jeera Rice')">Order</button>
+        </div>
+        <!--change-->
+        <div class="menu-item">
+          <img src="images/full meals.jpg" alt="Full Meals">
+          <h3>Full Meals</h3>
+          <p>₹60</p>
+          <button onclick="placeOrder('Full Meals')">Order</button>
+        </div>
+        <!--change-->
+        <div class="menu-item">
+          <img src="images/ragimundha.jpg" alt=" Ragimundha & Chicken">
+          <h3>Ragimundha & Chicken</h3>
+          <p>₹60</p>
+          <button onclick="placeOrder('Ragimundha & Chicken')">Order</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Snacks Section -->
+  <div id="snacks" class="menu-section">
+    <div class="menu-grid">
+      
+      <div class="menu-row large-row">
+        <div class="menu-item">
+          <img src="images/samosa.webp" alt="Samosa">
+          <h3>Samosa</h3>
+          <p>₹30</p>
+          <button onclick="placeOrder('Samosa')">Order</button>
+        </div>
+        <div class="menu-item">
+          <img src="images/french fries.webp" alt="French Fries">
+          <h3>French Fries</h3>
+          <p>₹50</p>
+          <button onclick="placeOrder('French Fries')">Order</button>
+        </div>
+      </div>
+
+      <div class="menu-row medium-row">
+        <div class="menu-item">
+          <img src="images/pani puri.jpg" alt="Pani Puri">
+          <h3>Pani Puri</h3>
+          <p>₹20</p>
+          <button onclick="placeOrder('Pani Puri')">Order</button>
+        </div>
+        <div class="menu-item">
+          <img src="images/sandwich1.webp" alt="Sandwich">
+          <h3>Sandwich</h3>
+          <p>₹50</p>
+          <button onclick="placeOrder('Sandwich')">Order</button>
+        </div>
+        <div class="menu-item">
+          <img src="images/tea & biscuits2.webp"Tea & Biscuits">
+          <h3>Tea & Biscuits</h3>
+          <p>₹50</p>
+          <button onclick="placeOrder('Tea & Biscuits')">Order</button>
+        </div>
+      </div>
+
+      <div class="menu-row small-row">
+        <div class="menu-item">
+          <img src="images/cutlet recipe.jpg" alt="Cutlet Recipes">
+          <h3>Cutlet Recipes</h3>
+          <p>₹60</p>
+          <button onclick="placeOrder('Cutlet Recipes')">Order</button>
+        </div>
+        <div class="menu-item">
+          <img src="images/ice cream 2.webp" alt="Ice Cream">
+          <h3>Ice Cream</h3>
+          <p>₹80</p>
+          <button onclick="placeOrder('Ice Cream')">Order</button>
+        </div>
+        <!-- change -->
+        <div class="menu-item">
+          <img src="images/bajilu.jpg" alt="Bajilu">
+          <h3>Bajilu</h3>
+          <p>₹80</p>
+          <button onclick="placeOrder('Bajilu')">Order</button>
+        </div>
+        <!--change-->
+        <div class="menu-item">
+          <img src="images/SWEETS.png" alt="Sweets">
+          <h3>Sweets</h3>
+          <p>₹80</p>
+          <button onclick="placeOrder('Sweets')">Order</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    </div>
+  </div>
+
+  <!-- Dinner Section -->
+  <div id="dinner" class="menu-section">
+    <div class="menu-grid">
+
+      
+      <div class="menu-row large-row">
+        <div class="menu-item">
+          <img src="images/chapathi1.jpg" alt="Chapathi">
+          <h3>Chapathi</h3>
+          <p>₹50</p>
+          <button onclick="placeOrder('Chapathi')">Order</button>
+        </div>
+        <div class="menu-item">
+          <img src="images/gopi.jpg" alt="Gopi">
+          <h3>Gopi</h3>
+          <p>₹50</p>
+          <button onclick="placeOrder('Gopi')">Order</button>
+        </div>
+      </div>
+
+      <div class="menu-row medium-row">
+        <div class="menu-item">
+          <img src="images/egg rice.jpg" alt="Egg Rice">
+          <h3>Egg Rice</h3>
+          <p>₹80</p>
+          <button onclick="placeOrder('Egg Rice')">Order</button>
+        </div>
+        <div class="menu-item">
+          <img src="images/fried-rice.jpg" alt="Veg Fried Rice">
+          <h3>Veg Fried Rice</h3>
+          <p>₹ 100</p>
+          <button onclick="placeOrder('Veg Fried Rice')">Order</button>
+        </div>
+        <div class="menu-item">
+          <img src="images/chicken roll.jpg"alt= "Chicken Roll">
+          <h3>Chicken Roll</h3>
+          <p>₹80</p>
+          <button onclick="placeOrder('Chicken Roll')">Order</button>
+        </div>
+      </div>
+
+      <div class="menu-row small-row">
+        <div class="menu-item">
+          <img src="images/mushroom fry.webp" alt="Mushroom Fry">
+          <h3>Mushroom Fry</h3>
+          <p>₹120</p>
+          <button onclick="placeOrder('Mushroom Fry')">Order</button>
+        </div>
+        <div class="menu-item">
+          <img src="images/fish curry.webp" alt="Fish Curry">
+          <h3>Fish Curry</h3>
+          <p>₹60</p>
+          <button onclick="placeOrder('Fish Curry')">Order</button>
+        </div>
+        <!-- change  -->
+         <div class="menu-item">
+          <img src="images/roti curry.webp" alt="Roti & Curry">
+          <h3>Roti & Curry</h3>
+          <p>₹60</p>
+          <button onclick="placeOrder('Roti & Curry')">Order</button>
+        </div>
+        <!-- change -->
+        <div class="menu-item">
+          <img src="images/curd rice.jpg" alt="Curd Rice">
+          <h3>Curd Rice</h3>C
+          <p>₹60</p>
+          <button onclick="placeOrder('Curd Rice')">Order</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    </div>
+  </div>
+
+  <script>
+    
+    function showMenu(menuId) {
+      const sections = document.querySelectorAll('.menu-section');
+      sections.forEach(section => {
+        section.style.display = 'none';
+      });
+      const selected = document.getElementById(menuId);
+      if (selected) {
+        selected.style.display = 'block';
+      }
+    }
+
+    function placeOrder(itemName) {
+      alert('You have ordered: ' + itemName);
+    }
+
+    // Show breakfast by default
+    showMenu('breakfast');
+    function placeOrder(itemName) {
+  // Redirect to confirmation page and pass the item name as query param
+  window.location.href = `order-confirmation.html?item=${encodeURIComponent(itemName)}`;
+}
+
+  </script>
+
+</body>
+</html>

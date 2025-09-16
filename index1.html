@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Byte & Bite</title>
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #fad6d6;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .content {
+      flex: 1;
+      padding-bottom: 40px;
+    }
+
+    .welcome-screen {
+      text-align: center;
+      padding: 60px 20px 40px;
+    }
+
+    h1 {
+      font-size: 3.5rem;
+      color: #d62828;
+      margin-bottom: 10px;
+    }
+
+    .description {
+      font-size: 1.5rem;
+      max-width: 800px;
+      margin: 0 auto;
+      color: #333;
+    }
+
+    .nav-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin: 30px 0;
+      flex-wrap: wrap;
+    }
+
+    .nav-buttons button {
+      background-color: #d62828;
+      color: white;
+      border: none;
+      padding: 14px 28px;
+      font-size: 1.1rem;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .nav-buttons button:hover {
+      background-color: #a31d1d;
+    }
+
+    .info-box {
+      background-color: white;
+      padding: 30px;
+      border-radius: 10px;
+      max-width: 800px;
+      margin: 0 auto 40px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      display: none;
+    }
+
+    .info-box h2 {
+      font-size: 2rem;
+      color: #d62828;
+      margin-bottom: 15px;
+    }
+
+    .info-box p,
+    .info-box ul {
+      font-size: 1.2rem;
+      color: #333;
+    }
+
+    .menu-sub-buttons {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin: 10px 0 20px;
+      justify-content: center;
+    }
+
+    .menu-sub-buttons button {
+      padding: 10px 20px;
+      font-size: 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    ul {
+      padding-left: 20px;
+      margin-top: 10px;
+    }
+
+    .next-page-button {
+      text-align: center;
+      margin: 30px 0;
+    }
+
+    .next-page-button button {
+      padding: 14px 28px;
+      font-size: 1.1rem;
+      background-color: #333;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .next-page-button button:hover {
+      background-color: #111;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #d62828;
+      color: white;
+      font-size: 1.1rem;
+    }
+
+    @media screen and (max-width: 600px) {
+      h1 {
+        font-size: 2.5rem;
+      }
+
+      .description {
+        font-size: 1.2rem;
+      }
+
+      .nav-buttons button {
+        padding: 12px 20px;
+        font-size: 1rem;
+      }
+
+      .info-box {
+        padding: 20px;
+      }
+
+      .info-box h2 {
+        font-size: 1.6rem;
+      }
+
+      .info-box p,
+      .info-box ul {
+        font-size: 1.05rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="content">
+
+    <!-- Welcome Section -->
+    <div class="welcome-screen">
+      <h1>Welcome to <span>Byte & Bite</span></h1>
+      <p class="description">
+        Byte & Bite is your one-stop online food ordering destination. We serve all types of delicious 
+        <strong>breakfast, lunch, snacks, and dinner</strong> — anytime, anywhere!
+      </p>
+    </div>
+
+    <!-- Navigation Buttons -->
+    <div class="nav-buttons">
+      <button onclick="showSection('about')">About</button>
+      <button onclick="showSection('menu')">Menu</button>
+      <button onclick="showSection('timing')">Timings</button>
+    </div>
+
+    <!-- About Section -->
+    <div id="about" class="info-box">
+      <h2>About Us</h2>
+      <p>We started Byte & Bite with one goal — to bring hot, tasty meals to your doorstep. With love, hygiene, and speed, we deliver satisfaction with every bite.</p>
+    </div>
+
+    <!-- Menu Section -->
+    <div id="menu" class="info-box">
+      <h2>Our Menu</h2>
+      <div class="menu-sub-buttons">
+        <button onclick="showMenu('breakfast')">Breakfast</button>
+        <button onclick="showMenu('lunch')">Lunch</button>
+        <button onclick="showMenu('snacks')">Snacks</button>
+        <button onclick="showMenu('dinner')">Dinner</button>
+      </div>
+      <div id="breakfast" class="menu-items">
+        <ul>
+          <li>Idli & Sambar</li>
+          <li>Dosa</li>
+          <li>Omelette</li>
+          <li>Poha</li>
+        </ul>
+      </div>
+      <div id="lunch" class="menu-items" style="display:none;">
+        <ul>
+          <li>Veg Thali</li>
+          <li>Chicken Biryani</li>
+          <li>Paneer Butter Masala</li>
+          <li>Curd Rice</li>
+        </ul>
+      </div>
+      <div id="snacks" class="menu-items" style="display:none;">
+        <ul>
+          <li>Samosa</li>
+          <li>French Fries</li>
+          <li>Pani Puri</li>
+          <li>Sandwich</li>
+        </ul>
+      </div>
+      <div id="dinner" class="menu-items" style="display:none;">
+        <ul>
+          <li>Chapati & Curry</li>
+          <li>Grilled Chicken</li>
+          <li>Dal Tadka</li>
+          <li>Fried Rice</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Timing Section -->
+    <div id="timing" class="info-box">
+      <h2>Our Timings</h2>
+      <p>We are open 24/7! Breakfast, Lunch, Snacks, and Dinner — whenever you're hungry, we’re ready to serve you.</p>
+    </div>
+
+    <!-- Go to Next Page Button -->
+    <div class="next-page-button">
+      <button onclick="goToNextPage()">Hungry? Tap Here!</button>
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    © Byte & Bite
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    function showSection(id) {
+      document.querySelectorAll('.info-box').forEach(el => el.style.display = 'none');
+      document.getElementById(id).style.display = 'block';
+      if (id === 'menu') {
+        showMenu('breakfast');
+      }
+    }
+
+    function showMenu(menuId) {
+      document.querySelectorAll('.menu-items').forEach(menu => menu.style.display = 'none');
+      document.getElementById(menuId).style.display = 'block';
+    }
+
+    function goToNextPage() {
+      window.location.href = 'index2.html'; // Your second page
+    }
+
+    // Default load
+    window.onload = () => {
+      showSection('about');
+    };
+  </script>
+
+</body>
+</html>

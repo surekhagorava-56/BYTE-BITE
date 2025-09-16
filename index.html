@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Byte & Bite Transition</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      background-image: url("images/WhatsApp\ Image\ 2025-08-06\ at\ 22.27.20_338b535b.jpg");
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* Circle container */
+    .rotating-circle {
+      width: 100px;
+      height: 100px;
+      background-color: black;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      position: absolute;
+      z-index: 10;
+      transition: transform 1s ease, opacity 0.5s ease;
+      transform: scale(0);
+      opacity: 0;
+      overflow: hidden; /* ensures image stays within circle */
+    }
+
+    /* Image inside the circle */
+    .rotating-circle img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Show & Animate */
+    .show {
+      transform: scale(1);
+      opacity: 1;
+    }
+
+    .expand {
+      transform: scale(50); /* Expand enough to cover screen */
+      border-radius: 0%;
+      animation: rotate 2s linear infinite;
+    }
+
+    @keyframes rotate {
+      0% {
+        transform: scale(50) rotate(0deg);
+      }
+      100% {
+        transform: scale(50) rotate(360deg);
+      }
+    }
+
+    /* Make whole circle clickable */
+    .circle-link {
+      position: absolute;
+      inset: 0;
+      z-index: 20;
+    }
+  </style>
+</head>
+<body onclick="expandCircle()">
+  <!-- Circle with image -->
+  <div id="circle" class="rotating-circle">
+    <a href="index1.html" class="circle-link"></a>
+    <img src="images/WhatsApp Image 2025-08-08 at 22.40.50_0b029b9e.jpg" alt="Logo" />
+  </div>
+
+  <script>
+    let clicked = false;
+
+    function expandCircle() {
+      const circle = document.getElementById('circle');
+
+      if (!clicked) {
+        circle.classList.add('show');
+
+        setTimeout(() => {
+          circle.classList.add('expand');
+        }, 100);
+
+        clicked = true;
+      }
+    }
+  </script>
+</body>
+</html>
